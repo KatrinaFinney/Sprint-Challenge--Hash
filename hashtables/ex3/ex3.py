@@ -1,10 +1,20 @@
 def intersection(arrays):
+    
+    arr = []
+    h = {}
 
-    """
-    YOUR CODE HERE
-    """
+    for i in arrays:
+        for j in i:
+            if j in h:
+                h[j] += 1
+            else:
+                h[j] = 1
 
-    return result
+    for key in h.keys():
+        if h[key] == len(arrays):
+            arr.append(key)
+
+    return arr
 
 
 if __name__ == "__main__":
